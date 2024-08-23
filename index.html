@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Patient First</title>
+</head>
+
+<body >
+
+  <div class="wrapper">
+    <div class="nav">
+      <div class="logo">Patient First</div>
+
+      <div class="menu-links">
+        <ul>
+          <li>locations</li>
+          <li>Store</li>
+          <li>Appointments</li>
+          <li>Donations</li>
+          <li>Health Tracker</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+
+      <div class="search"><i class="fa fa-search"></i></div>
+
+      <div class="account">my account</div>
+
+      <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+    </div>
+    <div class="content">
+      <div class="tagline">Find your cure</div>
+
+      <div class="pages"><span>2</span>/21</div>
+
+      <div class="title">Patient</div>
+
+      <div class="more"><a href="#">show all the juices</a></div>
+
+      <div class="desc">
+        <p>
+          Your <span>healthy</span> life <br>
+          starts here with us
+        </p>
+        <p>
+          A family-owned company founded with the purpose of giving your family access to clean, organic products while
+          you are on the go.
+        </p>
+      </div>
+    </div>
+
+    <div class="juice">
+      <img src="./img/file.png" alt="">
+    </div>
+
+    <div class="leaves">
+      <ul id="scene">
+        <li class="layer" data-depth="-.1">
+          <img src="./img/m2.png"  style="height:92.53px; width: 100px;">
+        </li>
+        <li class="layer" data-depth="-.3">
+          <img src="./img/m5.png" style="height:120px ; width: 120px;">
+        </li>
+        <li class="layer" data-depth="-1.5">
+          <img src="./img/m4.png" style="height:165px; width: 220px;">
+        </li>
+        <li class="layer" data-depth=".1">
+          <img src="./img/m3.png" style="height:140px ; width: 140px;">
+        </li>
+        <li class="layer" data-depth=".3">
+          <img src="./img/m1.webp" style="height:120px; width:120px;">
+        </li>
+      </ul>
+    </div>
+
+    <div class="arrows">
+      <button class="prev"><i class="fa fa-chevron-left"></i></button>
+      <button class="next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <div class="secondpage">
+    hello
+  </div>
+  <script>
+    // Initialize Parallax
+    var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
+
+    // GSAP Animations
+    gsap.timeline()
+      .from(".logo", { duration: 1, opacity: 0, x: -20, ease: "power3.out" })
+      .from(".menu-links ul li", {
+        duration: 1,
+        opacity: 0,
+        x: -20,
+        ease: "power3.out",
+        stagger: 0.08
+      }, "-=0.8")
+  
+  .from(".search", { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" }, "-=0.6")
+  .from(".account", { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" }, "-=0.6")
+  .from(".cart", { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" }, "-=0.6")
+  .from(".title", { duration: 1.2, opacity: 0, y: 20, ease: "expo.out" }, "-=0.4")
+  .from(".tagline", { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" }, "-=0.6")
+  .from(".pages", { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" }, "-=0.6")
+  .from(".more", { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" }, "-=0.6")
+  .from(".desc", { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" }, "-=0.6")
+  .from(".arrows", { duration: 0.8, opacity: 0, ease: "expo.out" }, "-=0.6")
+  .from(".juice", { duration: 1, opacity: 0, y: -800, ease: "expo.out" }, "-=0.6")
+  .from(".leaves .layer", { 
+    duration: 1, 
+    opacity: 0, 
+    y: -800, 
+    ease: "expo.out", 
+    stagger: 0.1,
+    onStart: () => parallax.disable(),
+    onComplete: () => parallax.enable()
+  }, "-=0.6");
+  </script>
+  
+</body>
+
+</html> 
