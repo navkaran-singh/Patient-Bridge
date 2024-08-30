@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospitals</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="hospital.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+          <div class="logo">Patient Bridge</div>
+    
+          <div class="menu-links">
+            <ul>
+              <li>hospitals</li>
+              <li>Store</li>
+              <li>Appointments</li>
+              <li>Donations</li>
+              <li>Health Tracker</li>
+              <li>Blog</li>
+            </ul>
+          </div>
+    
+          <div class="search"><i class="fa fa-search"></i></div>
+    
+          <div class="account">my account</div>
+    
+          <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+        </div>
+        <div class="content">
+      
+            <div class="title">Hospitals</div>
+      
+
+
+          <div class="juice">
+            <img src="./img/hopi.png" alt="">
+          </div>
+        </div>
+        <div class="maha">
+        <div class="container">
+            <div class="elem">
+            <img src="img/paras-hospital.jpg">
+            </div>
+            <div class="elem-dark"></div>
+              <div class="elem"></div>
+             <div class="elem"> </div>
+             <div class="elem-dark"> </div>
+             <div class="elem"> </div>
+             <div class="elem"> </div>
+             <div class="elem-dark"></div>
+             <div class="elem"> </div>
+          </div>
+          </div>
+        <script>
+            gsap.from(".title",{
+              x:1000,
+              duration:1,
+            })
+            gsap.from(".juice",{
+             y:1000,
+             duration:0.5,
+            })
+            gsap.from(".more",{
+            x:-1000,
+            duration:1
+            })
+        </script>
+</body>
+</html>
