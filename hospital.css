@@ -125,6 +125,7 @@
     backdrop-filter: blur(5px);
     overflow: hidden;
     transition: transform 0.3s ease;
+   
     }
     .elem img{
     height:24vh;
@@ -153,5 +154,70 @@
     .elem:hover {
         transform: scale(1.05);   /*  transform: scale(1.1);Move out of the screen to the right */
     }
-  
-  
+    .footer{
+        width: 90vw;
+        height: 40vh;
+        border-radius: 35px;
+        background-color: #000;
+        display: flex;
+        justify-content:center;
+        align-items:center ;
+        color: #fff;
+      }
+      .last{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+      .foot1{
+        height:26vh ;
+        width: 20vw;
+        border-right:solid 1px #fff;
+        margin-right: 3vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.5vh;
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-weight:100;
+      }
+      .foot2{
+        height:26vh ;
+        width: 20vw;
+        border-right:solid 1px #fff;
+        margin-left: 3vw;
+      }
+      .foot3{
+        height:26vh ;
+        width: 20vw;
+      }
+      .secpage{
+        width:100vw;
+        height:60vh;
+        background-color:rgb(130, 214, 3);
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        overflow-y: hidden;
+        }
+        
+        .box1{
+        height: 50vh;
+        width: 40vw;
+        display: flex;
+        flex-wrap: wrap;
+        color: black;
+        margin-left: 5vw;
+        }
+        .box1 h1{
+        font-size: 9vh; 
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        }
+        .box1 p{
+          font-size: 2vh;
+        }
+        
