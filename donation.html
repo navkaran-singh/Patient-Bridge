@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="hospital.css">
+    <link rel="stylesheet" href="donation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+          <div class="logo">Patient Bridge</div>
+    
+          <div class="menu-links">
+            <ul>
+              <li>hospitals</li>
+              <li>Store</li>
+              <li>Appointments</li>
+              <li>Donations</li>
+              <li>Health Tracker</li>
+              <li>Blog</li>
+            </ul>
+          </div>
+    
+          <div class="search"><i class="fa fa-search"></i></div>
+    
+          <div class="account">my account</div>
+    
+          <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+    </div>
+    <div class="form-container">
+        <form class="form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="parent-name">Mother's/Father's Name</label>
+                <input id="parent-name" type="text" placeholder="Mother's/Father's Name">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Current Residential Address</label>
+                <input id="address" type="text" placeholder="Enter current address">
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input id="city" type="text" placeholder="Enter city">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input id="dob" type="date" placeholder="Enter your DOB">
+            </div>
+
+            <div class="form-group">
+                <label for="organ">Organ Donation</label>
+                <select name="organ" id="organ">
+                    <option value="Kidney">Kidney</option>
+                    <option value="Heart">Heart</option>
+                    <option value="Lungs">Lungs</option>
+                    <option value="Stomach">Stomach</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit">SUBMIT</button>
+        </form>
+        <div class="img">
+            <img id="organ-image" src="" alt="Organ Image" style="display: none;">
+        </div>
+    </div>
+</body>
+<script src="donation.js"></script>
+</html>

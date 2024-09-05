@@ -1,0 +1,28 @@
+.form-container {
+  border: 3px dotted aqua;
+  display: flex;
+  width: 750px;
+  margin-left: 200px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 250px;
+  width: 500px;
+}
+
+.form-group {
+  margin-top: 20px;
+  width: 500px;
+}
+.form-group label {
+  padding-right: 5px;
+}
+.submit {
+  margin-top: 20px;
+  margin-left: -120px;
+}
+#organ-image {
+  width: 100px;
+}
