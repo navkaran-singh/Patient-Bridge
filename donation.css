@@ -1,0 +1,212 @@
+.main{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+  }
+  .nav {
+    display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  .nav a:hover {
+    color: palevioletred;
+    text-decoration: underline;
+  }
+
+  .nav a.active {
+    color: palevioletred;
+    text-decoration: underline;
+  }
+  .logo {
+    font-size: 40px;
+  }
+  .title2 {
+    text-align:center;
+    font-size: 150px;
+     text-transform: uppercase;
+     opacity: 85%;
+     font-weight: 700;
+     font-family: "Anton", sans-serif;
+     margin-top: 100px;
+
+   }
+   .juice {
+    position: absolute;
+    top: 3%;
+    left: 30%;
+    z-index:-99;
+    margin-top:100px ;
+  }
+  
+  .juice img {
+    animation: float 4s ease-in-out infinite;
+    height: 800px;
+    width: auto;  
+}
+  .menu-links ul li {
+    display: inline-block;
+    padding-right: 20px;
+  }
+  
+  .search,
+  .cart {
+    font-size: 20px;
+  }
+  body {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    overflow-x: hidden;
+    background-color: white;
+  }
+  .wrapper{
+    height: 100vh;
+    width: 100vw;
+  }
+  ul {
+    list-style: none;
+  }
+  .content {
+   height: 80vh;
+   width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    width: 500px;
+    padding-left: 30px;
+    padding-top: 20px;
+    background-color: black;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    font-family: 'Montserrat';
+    font-weight: 500;
+    color: white;
+    border-top-left-radius:35px ;
+    border-bottom-left-radius:35px ;
+  }
+  label{
+    font-size: 2vh;
+  }
+  
+  .form-group {
+    margin-top: 25px;
+    margin-left: 35px;
+    width: 500px;
+  }
+  .form-group label {
+    padding-right: 5px;
+  }
+  .submit {
+    margin-top: 20px;
+    margin-left: -120px;
+  }
+  .loda{
+  height:62.36vh;
+  width: 35vw;
+  background-color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius:35px;
+  border-bottom-right-radius:35px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  }
+  #organ-image {
+    height:35vh;
+  }
+ #name {
+  height: 4vh;
+  width:15vw;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 6px;
+  color: black;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), /* Dark shadow for 3D effect */
+  -4px -4px 8px rgba(255, 255, 255, 0.3);
+  }
+  #parent-name{
+  height: 4vh;
+  width:15vw;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 6px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), /* Dark shadow for 3D effect */
+  -4px -4px 8px rgba(255, 255, 255, 0.3);
+  }
+  #address{
+ height: 4vh;
+  width:13vw;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 6px;
+  }
+  #city {
+    height: 4vh;
+  width:15vw;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 6px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), /* Dark shadow for 3D effect */
+  -4px -4px 8px rgba(255, 255, 255, 0.3);
+  }
+  #email{
+    height: 4vh;
+  width:15vw;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 6px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), /* Dark shadow for 3D effect */
+  -4px -4px 8px rgba(255, 255, 255, 0.3);
+  }
+  #dob{
+    height: 4vh;
+  width:12vw;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 6px;
+  text-align: center;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), /* Dark shadow for 3D effect */
+  -4px -4px 8px rgba(255, 255, 255, 0.3);
+  }
+  #organ {
+    height: 4vh;
+  width:12vw;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-left: 6px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), /* Dark shadow for 3D effect */
+  -4px -4px 8px rgba(255, 255, 255, 0.3);
+  }
+  .submit{
+    height: 4vh;
+    width: 10vw;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6), /* Dark shadow for 3D effect */
+    -4px -4px 8px rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+  }
+ select {
+    text-align: center;
+ }

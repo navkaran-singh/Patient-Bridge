@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+  }
+  .nav {
+    display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  .nav a:hover {
+    color: palevioletred;
+    text-decoration: underline;
+  }
+
+  .nav a.active {
+    color: palevioletred;
+    text-decoration: underline;
+  }
+  .logo {
+    font-size: 40px;
+  }
+  
+  .menu-links ul li {
+    display: inline-block;
+    padding-right: 20px;
+  }
+  
+  .search,
+  .cart {
+    font-size: 20px;
+  }
+  body {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    overflow-x: hidden;
+    background-color: white;
+  }
+  .wrapper{
+    height: 100vh;
+    width: 100vw;
+  }
+  ul {
+    list-style: none;
+  }
+  .content {
+   height: 80vh;
+   width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title {
+   text-align:center;
+   font-size: 190px;
+    text-transform: uppercase;
+    opacity: 85%;
+    font-weight: 700;
+    font-family: "Anton", sans-serif;
+  }
+  .more a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    background: #000;
+    padding: 10px 30px;
+    border-radius: 10px; 
+    margin-right: 31vw;
+  }
+  
+  .juice {
+    position: absolute;
+    top: 3%;
+    left: 30%;
+    z-index:-99;
+  }
+  
+  .juice img {
+    animation: float 4s ease-in-out infinite;
+    height: 800px;
+    width: auto;  
+}
+
+  
+  /* @keyframes float {
+    0% {
+      transform: translate(-50%, -46%);
+    }
+    50% {
+      transform: translate(-50%, -54%);
+    }
+    100% {
+      transform: translate(-50%, -46%);
+    }
+  } */
+  .maha {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .container{
+    height: 150vh;
+    width:90vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #dedede;
+    border-radius: 30px;
+    padding-top: 5vh;
+    z-index: 1;
+    }
+    
+    .elem{
+    flex-shrink: 0;
+    height: 38vh;
+    width:20vw;
+    border-radius: 35px;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vh;
+    font-family:'Montserrat'; 
+    padding: 30px;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+   
+    }
+    .elem img{
+    height:24vh;
+    width: 18vw;
+    box-shadow: 17px 17px 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    }
+    .elem h1{
+    margin-top: 1.5vh;
+    font-size: 3vh;
+   
+    }
+    .elem h2{
+    height: 3.2vh;
+    width: 60%;
+    font-size: 2vh;
+    background-color: black;
+    color:whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 17px 30px rgba(0,0,0,0.5);;
+    }
+    .elem:hover {
+        transform: scale(1.05);   /*  transform: scale(1.1);Move out of the screen to the right */
+    }
+    .footer{
+        width: 90vw;
+        height: 40vh;
+        border-radius: 35px;
+        background-color: #000;
+        display: flex;
+        justify-content:center;
+        align-items:center ;
+        color: #fff;
+      }
+      .last{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+      .foot1{
+        height:26vh ;
+        width: 20vw;
+        border-right:solid 1px #fff;
+        margin-right: 3vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.5vh;
+        font-family: 'Montserrat';
+        text-transform: uppercase;
+        font-weight:100;
+      }
+      .foot2{
+        height:26vh ;
+        width: 20vw;
+        border-right:solid 1px #fff;
+        margin-left: 3vw;
+      }
+      .foot3{
+        height:26vh ;
+        width: 20vw;
+      }
+      .secpage{
+        width:100vw;
+        height:60vh;
+        background-color:rgb(3, 196, 249);
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        overflow-y: hidden;
+        }
+        
+        .box1{
+        height: 50vh;
+        width: 40vw;
+        display: flex;
+        flex-wrap: wrap;
+        color: black;
+        margin-left: 5vw;
+        }
+        .box1 h1{
+        font-size: 9vh; 
+        font-family: "Anton", sans-serif;
+        text-transform: uppercase;
+        }
+        .box1 p{
+          font-size: 2vh;
+        }
