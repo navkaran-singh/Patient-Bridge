@@ -9,192 +9,178 @@
     <link rel="stylesheet" href="hospital.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
+  
 </head>
 <body>
     <div class="wrapper">
         <div class="nav">
-          <div class="logo">Patient Bridge</div>
-    
-          <div class="menu-links">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a class="active" href="hospital.html">Hospitals</a></li>
-              <li><a href="mainstore2.html">Store</a></li>
-              <li><a href="index.html">Appointments</a></li>
-              <li><a href="donation.html"> Organ Donations</a></li>
-              <li><a href="index.html">Health Tracker</a></li>
-              <li><a href="index.html">Blog</a></li>
-            </ul>
-          </div>
-    
-          <div class="search"><i class="fa fa-search"></i></div>
-    
-          <div class="account">my account</div>
-    
-          <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+            <div class="logo">Patient Bridge</div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="hospital.html">Hospitals</a></li>
+                    <li><a href="mainstore2.html">Store</a></li>
+                    <li><a href="index.html">Appointments</a></li>
+                    <li><a href="donation.html">Organ Donations</a></li>
+                    <li><a href="index.html">Health Tracker</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="search"><i class="fa fa-search"></i></div>
+            <div class="account">my account</div>
+            <div class="cart"><i class="fa fa-shopping-cart"></i></div>
         </div>
+
         <div class="content">
-      
             <div class="title">Hospitals</div>
-      
-
-
-          <div class="juice">
-            <img src="y2.png" alt="">
-          </div>
+            <div class="juice">
+                <img src="img/y2.png" alt="">
+            </div>
         </div>
+
         <div class="secpage">
-          <div class="box1">
-          <h1>Comprehensive Care at Every Location</h1>
-          <p>Whether you need specialized treatment or general healthcare services, our hospitals are strategically located to ensure you have access to the best medical care close to home."</p>
-          <div class="butt">
-          <h2>Book Now</h2>
-          <h2>Shop Now</h2>
-          </div>
-          </div>
-          <div class="ok">
-            <img src="portrait-smiling-young-woman-doctor-healthcare-medical-worker-pointing-fingers-left-showing-clini.png" style="height:60vh; width: auto; margin-top: 3px; ">
-          </div>
+            <div class="box1">
+                <h1>Comprehensive Care at Every Location</h1>
+                <input type="text" placeholder="Enter your city" class="search-input"/>
+                <div class="butt">
+                    <button class="location-btn" id="searchButton">City Search</button>
+                    <button class="location-btn" id="locationButton">Current Location</button>
+                </div>
+            </div>
+            <div class="ok">
+                <img src="img/portrait-smiling-young-woman-doctor-healthcare-medical-worker-pointing-fingers-left-showing-clini.png" style="height:60vh; width: auto; margin-top: 3px;">
+            </div>
         </div>
-        <br><br><br>
-        <div class="heading">
-        <h1>Featured Hospitals</h1>
-        <br>
-        </div>
-        <div class="thridpage">
-         <div class="a"><img src="img/paras-hospital.jpg"> <h1>Paras Hospital</h1>
-          <h2>Book Now</h2></div>
-         <div class="b"> <img src="img/apolo.jpg"><h1>Apollo Hospital</h1>
-          <h2>Book Now</h2></div>
-         <div class="c"> <img src="img/artemis-hospital.webp"><h1>Artemis Hospital</h1>
-        <h2>Book Now</h2></div>
-         <div class="d"> <img src="img/fortis.jpg"><h1>Fortis Hospital</h1>
-        <h2>Book Now</h2> </div>
-         </div>
-         <br><br><br><br><br><br><br>
-         <div class="forpage">
-         <div class="boxa">
-          <h1>200+</h1>
-          <h2>Hospitals Citywide</h2>
-         </div>
-        <img src="/img/doctor-nurses-special-equipment.png">
-        <div class="boxb">
-         <h1>3000+</h1>
-         <h2>Happy Costumers</h2>
-        </div>
-         </div>
-         <br>
-         <div class="bb">
-          Book Now
-         </div>
-         <br><br>
-         <div class="mf">
-         <div class="fivpage">
-          <div class="e"><img src="img/columbia-asia-hospital-pvt-ltd-siddique-nagar-mysore-multispeciality-hospitals-9uyge.webp"> <h1>Paras Hospital</h1>
-           <h2>Book Now</h2></div>
-          <div class="f"> <img src="img/MANIPAL-HOSPITALS-1.jpg"><h1>Apollo Hospital</h1>
-           <h2>Book Now</h2></div>
-          <div class="g"> <img src="img/jaypee-hospital-onbiqblub8w9wbfgit4112nrnyp1k7h1sz3jrow59c.jpg"><h1>Artemis Hospital</h1>
-         <h2>Book Now</h2></div>
-          <div class="h"> <img src="img/narayana-superspeciality-hospital-onbioiqz7ofhn81o1j2rr10yodkpt3bkk231nlkb6o.jpg"><h1>Fortis Hospital</h1>
-         <h2>Book Now</h2> </div>
-          </div>
-          </div>
-          <div class="mf">
-            <div class="fivpage">
-             <div class="g"><img src="img/max.webp"> <h1>Paras Hospital</h1>
-              <h2>Book Now</h2></div>
-             <div class="h"> <img src="img/apolo.jpg"><h1>Apollo Hospital</h1>
-              <h2>Book Now</h2></div>
-             <div class="e"> <img src="img/fortis.jpg"><h1>Artemis Hospital</h1>
-            <h2>Book Now</h2></div>
-             <div class="f"> <img src="img/artemis-hospital.webp"><h1>Fortis Hospital</h1>
-            <h2>Book Now</h2> </div>
-             </div>
-             </div>
-         
-        
-      
 
-        <!-- <div class="maha">
-        <div class="container">
-            <div class="elem">
-            <img src="img/paras-hospital.jpg">
-            <h1>Paras Hospital</h1>
-            <h2>Book Now</h2>
-            </div>
-            <div class="elem">
-            <img src="img/apolo.jpg">
-            <h1>Apollo Hospital</h1>
-            <h2>Book Now</h2>
-            </div>
-              <div class="elem">
-            <img src="img/artemis-hospital.webp">
-            <h1>Artemis Hospital</h1>
-            <h2>Book Now</h2>
-              </div>
-             <div class="elem">
-                <img src="img/fortis.jpg"> 
-                <h1>Fortis Hospital</h1>
-                <h2>Book Now</h2> 
-            </div>
-             <div class="elem">
-                <img src="img/max.webp">
-                <h1>Max Hospital</h1>
-                <h2>Book Now</h2>
-            </div>
-             <div class="elem">
-                <img src="img/columbia-asia-hospital-pvt-ltd-siddique-nagar-mysore-multispeciality-hospitals-9uyge.webp">
-                <h1>Columbia Asia</h1>
-                <h2>Book Now</h2>
-             </div>
-             <div class="elem">
-                <img src="img/MANIPAL-HOSPITALS-1.jpg">
-            <h1>Manipal Hospital</h1>
-        <h2>Book Now</h2> </div>
-             <div class="elem">
-                <img src="img/jaypee-hospital-onbiqblub8w9wbfgit4112nrnyp1k7h1sz3jrow59c.jpg">
-                <h1>Jaypee Hospital</h1>
-                <h2>Book Now</h2>
-             </div>
-             <div class="elem">
-                <img src="img/narayana-superspeciality-hospital-onbioiqz7ofhn81o1j2rr10yodkpt3bkk231nlkb6o.jpg">
-            <h1>Narayana Hospital</h1>
-        <h2>Book Now</h2> </div>
-          </div>
-          </div>
-          <br><br> -->
-<!-- <div class="last">
-<div class="footer">
-<div class="foot1">
-  <h4>About Us</h4>
-  <h4>Blog</h4>
-  <h4>Legal</h4>
-  <h4>FAQ</h4>
-</div>
-<div class="foot2"></div>
-<div class="foot3"></div>
-</div>
-</div>
-<br><br> -->
+        <div class="heading">
+            <h1>Available Hospitals</h1>
+        </div>
+          
+        <div class="details" id="hospitalList"></div>
+        <p class="error" id="errorMessage" style="display:none;">No hospitals found or an error occurred.</p>
+
         <script>
-            gsap.from(".title",{
-              x:1200,
-              delay:0.4,
-              duration:1,
-            })
-            gsap.from(".juice",{
-            
-            })
-            gsap.from(".more",{
-            x:-1000,
-            duration:1
-            })
-            gsap.from(".elem h2",{
-            y:500,
-            duration:0.5
-            })
-           
- </script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cityInput = document.getElementById('cityInput');
+                const searchButton = document.getElementById('searchButton');
+                const locationButton = document.getElementById('locationButton');
+                const hospitalList = document.getElementById('hospitalList');
+                const errorMessage = document.getElementById('errorMessage');
+                const API_KEY = 'ca277f684e914ee8b72058fbc5134660';
+                const FLICKR_API_KEY = 'd83f91618287d8d3cb1de4572c6f9946';
+
+                // Search by city
+                searchButton.addEventListener('click', async function () {
+                    const city = cityInput.value.trim();
+                    hospitalList.innerHTML = '';  // Clear previous results
+                    errorMessage.style.display = 'none';
+
+                    try {
+                        const coordinates = await getCoordinates(city);
+                        const hospitals = await fetchHospitals(coordinates);
+                        displayHospitals(hospitals);
+                    } catch (error) {
+                        console.error('Error fetching hospital data:', error);
+                        errorMessage.style.display = 'block';
+                    }
+                });
+
+                // Search by current location
+                locationButton.addEventListener('click', async function () {
+                    hospitalList.innerHTML = '';  // Clear previous results
+                    errorMessage.style.display = 'none';
+
+                    try {
+                        const coordinates = await getLocation();
+                        const hospitals = await fetchHospitals(coordinates);
+                        displayHospitals(hospitals);
+                    } catch (error) {
+                        console.error('Error fetching hospital data:', error);
+                        errorMessage.style.display = 'block';
+                    }
+                });
+
+                // Get coordinates by city
+                async function getCoordinates(city) {
+                    const geocodeUrl = `https://api.geoapify.com/v1/geocode/search?text=${city}&apiKey=${API_KEY}`;
+                    const response = await fetch(geocodeUrl);
+                    const data = await response.json();
+                    if (data.features.length === 0) {
+                        throw new Error('City not found');
+                    }
+                    const { lat, lon } = data.features[0].properties;
+                    return { lat, lon };
+                }
+
+                // Get current location
+                function getLocation() {
+                    return new Promise((resolve, reject) => {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(
+                                (position) => {
+                                    const { latitude, longitude } = position.coords;
+                                    resolve({ lat: latitude, lon: longitude });
+                                },
+                                (error) => {
+                                    reject(new Error("Geolocation error: " + error.message));
+                                }
+                            );
+                        } else {
+                            reject(new Error("Geolocation is not supported by this browser."));
+                        }
+                    });
+                }
+
+                // Fetch hospitals
+                async function fetchHospitals({ lat, lon }) {
+                    const url = `https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=circle:${lon},${lat},10000&apiKey=${API_KEY}`;
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error('Error fetching data');
+                    }
+                    const data = await response.json();
+                    if (data.features.length === 0) {
+                        throw new Error('No hospitals found');
+                    }
+                    return data.features;
+                }
+
+                // Fetch hospital images from Flickr
+                async function fetchHospitalImage(hospitalName) {
+                    const flickrUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${FLICKR_API_KEY}&text=${encodeURIComponent(hospitalName)}&format=json&nojsoncallback=1`;
+                    const response = await fetch(flickrUrl);
+                    if (!response.ok) {
+                        throw new Error('Error fetching image data');
+                    }
+                    const data = await response.json();
+                    if (data.photos.photo.length > 0) {
+                        const photo = data.photos.photo[0];
+                        return `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+                    }
+                    throw new Error('No images found');
+                }
+
+            // Display hospitals
+async function displayHospitals(hospitals) {
+    for (const hospital of hospitals) {
+        const hospitalInfo = hospital.properties;
+        const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
+        
+        const hospitalElement = document.createElement('div');
+        hospitalElement.classList.add('hospital-card'); // Add the card class
+        
+        hospitalElement.innerHTML = `
+            <img src="${hospitalImage || 'img/default-hospital.jpg'}" alt="${hospitalInfo.name}">
+            <h1>${hospitalInfo.name}</h1>
+            <button>Preview</button>
+        `;
+        
+        hospitalList.appendChild(hospitalElement);
+    }
+}
+
+            });
+        </script>
+    </div>
 </body>
 </html>

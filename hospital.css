@@ -134,7 +134,7 @@
   
   .juice {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     z-index:-99;
   }
@@ -160,13 +160,14 @@
       .secpage{
         width:100vw;
         height:60vh;
-        background-color: #00c6ff;
+        background-color: #00c8ffcb;
         display: flex;
         align-items: center;
         justify-content:space-between;
         overflow-y: hidden;
         box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
         }
+      
         
         .box1{
         height: 50vh;
@@ -204,99 +205,8 @@
           height:5.5vh;
           width: 40vw;
         }
-        .thridpage{
-          height: 60vh;
-          width: 100vw;
-          display: flex;
-          justify-content: space-evenly;
-          align-items: center;
-        }
-        .thridpage img{
-         height:24vh ;
-         width: 18vw;
-         border-radius: 10px;
-         box-shadow: 17px 17px 30px rgba(0,0,0,0.5);
-        }
-        .thridpage h2{
-          height: 3.2vh;
-          width: 60%;
-          font-size: 1.6vh;
-          background-color: black;
-          color:whitesmoke;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 5px;
-          border-radius: 10px;
-          box-shadow: 0px 17px 30px rgba(0,0,0,0.5);
-          font-weight: 200;
-          }
-        .thridpage h1{
-         font-weight: 700;
-            margin-top: 2.5vh;
-            font-size: 3vh;
-            background-color:black;
-            width: 100%;
-            border-radius: 8px;
-            text-align: center;
-            color: white;
-            opacity: 0%;
-        }
-        .a{
-          height:44vh;
-          width:18vw;
-          background: rgb(255, 3, 129);
-          background:linear-gradient(to bottom,rgb(255, 3, 45),rgb(255,3,129)) ;
-          border-radius: 5vh;
-          box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding:30px;
-          flex-direction: column;
-          gap:1vh;
-        }
-        .b{
-          height: 44vh;
-          width:18vw;
-          background: linear-gradient(to bottom, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          border-radius: 5vh;
-          box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding:30px;
-          flex-direction: column;
-          gap:1vh;
-        }
-        .c{
-          height: 44vh;
-          width:18vw;
-          background: rgb(15, 241, 4);
-          background:linear-gradient(to bottom,rgb(1, 179, 27),rgb(95, 253, 3)) ;
-          border-radius:5vh ;
-          box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding:30px;
-          flex-direction: column;
-          gap:1vh;
-        }
-        .d{
-          height: 44vh;
-          width:18vw;
-          background-color: rgb(255, 102, 0);
-          background:linear-gradient(to bottom,rgb(255,102,0),rgb(255, 196, 0)) ;
-          border-radius: 5vh;
-          box-shadow: 20px 20px 50px rgba(0,0,0,0.5); 
-          display: flex;
-          justify-content: center;
-          padding:30px;
-          align-items: center;
-          gap:1vh;
-          flex-direction: column;
-        }
+    
+        
       .heading{
         height:20vh;
         width: 100vw;
@@ -310,160 +220,134 @@
         font-family: "Anton", sans-serif;
         text-transform: uppercase;
       }
-    .forpage{
-      height:60vh;
-      width: 100vw;
-      display: flex;
-      background-color:rgb(255, 102, 0);
-      background:linear-gradient(to bottom,rgb(255,102,0),rgb(255, 196, 0)) ;
-      box-shadow: 20px 20px 50px rgba(0,0,0,0.5); 
-    }
-    .forpage h1{
-     font-size: 9vh;
-    }
-    .forpage h2{
-      font-size: 2.2vh;
-    }
-    .forpage img{
-      height:80vh;
-      position: absolute;
-      top:226%;
-      left:24%;
-    }
-    .boxa{
-      height: 60vh;
-      width: 50vw;
-      display:flex;
-      justify-content: center;
-      margin-left: 8vw;
-      flex-direction: column;
-    }
-    .boxb{
-      height: 60vh;
-      width: 50vw;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      flex-direction: column;
-      margin-right: 8vw;
-    }
-    .boxb h2{
-      margin-right: 3vw;
-    }
-    .bb{
-        position: absolute;
-        top:290%;
-        left:44%;
-        z-index: 99;
+      .forthpage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f0; /* Adjust background color */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .secpage button{
         width: 12vw;
-        height: 6vh;
+        height: 5.5vh;
         font-weight: 200;
         font-size: 1.6vh;
         color: #fff;
         background-color: black;
         border-radius: 20px;
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-right: 4vw;
         box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-    }
-    .mf{
-      height:60vh;
-      width: 100vw;
-      display: flex;
-      justify-content: center;
-    }
-    .fivpage{
-      height: 60vh;
-      width: 85vw;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-    .fivpage img{
-      height:22vh ;
-      width: 14vw;
-      border-radius: 10px;
-      box-shadow: 17px 17px 30px rgba(0,0,0,0.5);
-     }
-     .fivpage h2{
-       height: 3.2vh;
-       width: 60%;
-       font-size: 1.6vh;
-       background-color: black;
-       color:whitesmoke;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       padding: 5px;
-       border-radius: 10px;
-       box-shadow: 0px 17px 30px rgba(0,0,0,0.5);
-       font-weight: 200;
-       }
-     .fivpage h1{
-      font-weight: 700;
-         margin-top: 2.5vh;
-         font-size: 3vh;
-         background-color:black;
-         width: 100%;
-         border-radius: 8px;
-         text-align: center;
-         color: white;
-         opacity: 0%;
-     }
-     .e{
-      height:34vh;
-      width:14vw;
-      background: rgb(255, 3, 129);
-      background:linear-gradient(to bottom,rgb(255, 3, 45),rgb(255,3,129)) ;
-      border-radius: 5vh;
-      box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding:30px;
-      flex-direction: column;
-      gap:1vh;
-    }
-    .f{
-      height: 34vh;
-      width:14vw;
-      background: linear-gradient(to bottom, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-      border-radius: 5vh;
-      box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding:30px;
-      flex-direction: column;
-      gap:1vh;
-    }
-    .g{
-      height: 34vh;
-      width:14vw;
-      background: rgb(15, 241, 4);
-      background:linear-gradient(to bottom,rgb(1, 179, 27),rgb(95, 253, 3)) ;
-      border-radius:5vh ;
-      box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding:30px;
-      flex-direction: column;
-      gap:1vh;
-    }
-    .h{
-      height: 34vh;
-      width:14vw;
-      background-color: rgb(255, 102, 0);
-      background:linear-gradient(to bottom,rgb(255,102,0),rgb(255, 196, 0)) ;
-      border-radius: 5vh;
-      box-shadow: 20px 20px 50px rgba(0,0,0,0.5); 
-      display: flex;
-      justify-content: center;
-      padding:30px;
-      align-items: center;
-      gap:1vh;
-      flex-direction: column;
-    }
+        font-family:  'Montserrat';
+      }
+      
+      .search-input {
+        width: 80%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 35px;
+        font-size: 16px;
+        background-color: rgba(0, 0, 0,0.1); /* Translucent black */
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(15px); /* Glassmorphism effect */
+        -webkit-backdrop-filter: blur(60px); /* For Safari support */
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Smooth transition */
+      }
+      
+      .search-input:focus {
+        background-color: rgba(0, 0, 0, 0.2); /* Darker translucent black on focus */
+        backdrop-filter: blur(12px); /* More blur on focus */
+        outline: none;
+      }
+      
+      
+    
+    
+   /* Container for the grid */
+.details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  grid-gap: 40px; /* Space between cards */
+  padding: 40px; /* Padding around the grid */
+}
+
+/* Styles for the hospital cards */
+.hospital-card {
+  height: 44vh; /* Adjust height */
+  width: 18vw; /* Full width of the grid cell */
+  background:#dedede; /* Gradient background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px; /* Space inside the card */
+  transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.hospital-card:hover {
+  transform: scale(1.05); /* Scale up on hover */
+}
+
+.hospital-card img {
+  height: 20vh; /* Adjust image height */
+  width: 14vw; /* Maintain aspect ratio */
+  border-radius: 10px;
+  box-shadow: 17px 17px 30px rgba(0,0,0,0.5);
+  margin-bottom: 4vh;
+}
+
+.hospital-card button {
+  height: 3.2vh;
+  width: 60%;
+  font-size: 1.6vh;
+  background-color: black;
+  color:whitesmoke;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 17px 30px rgba(0,0,0,0.5);
+  font-weight: 200;
+  font-family:'Montserrat';
+}
+.hospital-card h1{
+color: black;
+width: 100%;
+text-align: center;
+margin-bottom: 2vh;
+font-family: "Anton", sans-serif;
+text-transform: uppercase;
+}
+
+.hospital-card p {
+  font-size: 1.5vh; /* Adjust paragraph size */
+  color: #333; /* Text color */
+  text-align: center; /* Center align text */
+}
+
+/* Make the grid responsive */
+@media (max-width: 1024px) {
+  .details {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .details {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+}
+
+  
