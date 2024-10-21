@@ -58,6 +58,22 @@
           
         <div class="details" id="hospitalList"></div>
         <p class="error" id="errorMessage" style="display:none;">No hospitals found or an error occurred.</p>
+        <div class="modal" id="hospitalModal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <div class="modal-image">
+                    <img src="" alt="Hospital Image" id="modalImage">
+                </div>
+                <div class="modal-info">
+                    <h2 id="hospitalName"></h2>
+                    <p><strong>Address:</strong> <span id="hospitalAddress"></span></p>
+                    <p><strong>Phone:</strong> <span id="hospitalPhone"></span></p>
+                    <p><strong>Email:</strong> <span id="hospitalEmail"></span></p>
+                    <p><strong>Website:</strong> <a id="hospitalWebsite" target="_blank"></a></p>
+                    <button class="enquiry-btn">Enquire Now</button>
+                </div>
+            </div>
+        </div>
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -159,13 +175,14 @@
                     }
                     throw new Error('No images found');
                 }
+                
 
             // Display hospitals
 async function displayHospitals(hospitals) {
     for (const hospital of hospitals) {
         const hospitalInfo = hospital.properties;
         const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
-        
+        console.log(hospital.properties);
         const hospitalElement = document.createElement('div');
         hospitalElement.classList.add('hospital-card'); // Add the card class
         
@@ -176,9 +193,34 @@ async function displayHospitals(hospitals) {
         `;
         
         hospitalList.appendChild(hospitalElement);
+        hospitalElement.querySelector('button').addEventListener('click', () => {
+                            openModal(hospital);
+                        });
     }
 }
+async function  openModal (hospital) {
+    const hospitalInfo = hospital.properties; // Use the passed hospital object
+    const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
+    
+    modalImage.src = hospitalImage || 'img/default-hospital.jpg'; // Set image source
+    hospitalName.textContent = hospitalInfo.name; // Set hospital name
+    hospitalAddress.textContent = hospitalInfo.address_line2 || "Address not available"; // Set address
+    hospitalEmail.textContent=hospitalInfo.contact.email || "Email not availabe";
+    hospitalPhone.textContent = hospitalInfo.contact.phone || "Phone not available"; // Set phone
+    hospitalWebsite.textContent = hospitalInfo.website || "Website not available"; // Set website
+    hospitalWebsite.href = hospitalInfo.website || "#"; // Set website link
+    
+    hospitalModal.style.display = 'flex'; // Show modal
+    document.body.classList.add('blur'); // Add blur effect
+    document.body.style.overflow = 'hidden'; // Disable scrolling
+}
 
+                closeModal.addEventListener('click', function () {
+                    hospitalModal.style.display = 'none';
+                    document.body.classList.remove('blur');
+                    document.body.style.overflow = 'auto'; 
+                    displayHospitals();
+                });
             });
         </script>
     </div>
