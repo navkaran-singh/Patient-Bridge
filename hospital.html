@@ -7,9 +7,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="hospital.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
-  
 </head>
 <body>
     <div class="wrapper">
@@ -22,11 +23,9 @@
                     <li><a href="mainstore2.html">Store</a></li>
                     <li><a href="index.html">Appointments</a></li>
                     <li><a href="donation.html">Organ Donations</a></li>
-                    <li><a href="index.html">Health Tracker</a></li>
                     <li><a href="index.html">Blog</a></li>
                 </ul>
             </div>
-            <div class="search"><i class="fa fa-search"></i></div>
             <div class="account">my account</div>
             <div class="cart"><i class="fa fa-shopping-cart"></i></div>
         </div>
@@ -61,9 +60,7 @@
         <div class="modal" id="hospitalModal">
             <div class="modal-content">
                 <span class="close-btn" id="closeModal">&times;</span>
-                <div class="modal-image">
-                    <img src="" alt="Hospital Image" id="modalImage">
-                </div>
+                <div id="map" style="height: 100%; width: 50%; overflow: hidden;"></div>
                 <div class="modal-info">
                     <h2 id="hospitalName"></h2>
                     <p><strong>Address:</strong> <span id="hospitalAddress"></span></p>
@@ -84,6 +81,8 @@
                 const errorMessage = document.getElementById('errorMessage');
                 const API_KEY = 'ca277f684e914ee8b72058fbc5134660';
                 const FLICKR_API_KEY = 'd83f91618287d8d3cb1de4572c6f9946';
+
+                let map; // Declare the map variable globally
 
                 // Search by city
                 searchButton.addEventListener('click', async function () {
@@ -175,54 +174,73 @@
                     }
                     throw new Error('No images found');
                 }
-                
 
-            // Display hospitals
-async function displayHospitals(hospitals) {
-    for (const hospital of hospitals) {
-        const hospitalInfo = hospital.properties;
-        const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
-        console.log(hospital.properties);
-        const hospitalElement = document.createElement('div');
-        hospitalElement.classList.add('hospital-card'); // Add the card class
-        
-        hospitalElement.innerHTML = `
-            <img src="${hospitalImage || 'img/default-hospital.jpg'}" alt="${hospitalInfo.name}">
-            <h1>${hospitalInfo.name}</h1>
-            <button>Preview</button>
-        `;
-        
-        hospitalList.appendChild(hospitalElement);
-        hospitalElement.querySelector('button').addEventListener('click', () => {
-                            openModal(hospital);
-                        });
-    }
-}
-async function  openModal (hospital) {
-    const hospitalInfo = hospital.properties; // Use the passed hospital object
-    const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
-    
-    modalImage.src = hospitalImage || 'img/default-hospital.jpg'; // Set image source
-    hospitalName.textContent = hospitalInfo.name; // Set hospital name
-    hospitalAddress.textContent = hospitalInfo.address_line2 || "Address not available"; // Set address
-    hospitalEmail.textContent=hospitalInfo.contact.email || "Email not availabe";
-    hospitalPhone.textContent = hospitalInfo.contact.phone || "Phone not available"; // Set phone
-    hospitalWebsite.textContent = hospitalInfo.website || "Website not available"; // Set website
-    hospitalWebsite.href = hospitalInfo.website || "#"; // Set website link
-    
-    hospitalModal.style.display = 'flex'; // Show modal
-    document.body.classList.add('blur'); // Add blur effect
-    document.body.style.overflow = 'hidden'; // Disable scrolling
-}
+                // Display hospitals
+                async function displayHospitals(hospitals) {
+                    for (const hospital of hospitals) {
+                        const hospitalInfo = hospital.properties;
+                        const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
 
-                closeModal.addEventListener('click', function () {
-                    hospitalModal.style.display = 'none';
-                    document.body.classList.remove('blur');
-                    document.body.style.overflow = 'auto'; 
-                    displayHospitals();
-                });
+                        const hospitalElement = document.createElement('div');
+                        hospitalElement.classList.add('hospital-card'); // Add the card class
+    
+
+                        hospitalElement.innerHTML = `
+                            <img src="${hospitalImage || 'img/default-hospital.jpg'}" alt="${hospitalInfo.name}">
+                            <h1>${hospitalInfo.name}</h1>
+                            <button>Preview</button>
+                        `;
+
+                        hospitalList.appendChild(hospitalElement);
+                        hospitalElement.querySelector('button').addEventListener('click', () => showHospitalModal(hospitalInfo, hospitalImage));
+                    }
+                }
+
+                // Show modal with hospital details
+                function showHospitalModal(hospitalInfo, hospitalImage) {
+                    const hospitalName = document.getElementById('hospitalName');
+                    const hospitalAddress = document.getElementById('hospitalAddress');
+                    const hospitalPhone = document.getElementById('hospitalPhone');
+                    const hospitalEmail = document.getElementById('hospitalEmail');
+                    const hospitalWebsite = document.getElementById('hospitalWebsite');
+
+                    hospitalName.innerText = hospitalInfo.name;
+                    hospitalAddress.innerText = hospitalInfo.formatted;
+                    hospitalPhone.innerText = hospitalInfo.contact.phone || 'N/A';
+                    hospitalEmail.innerText = hospitalInfo.contact.email || 'N/A';
+                    hospitalWebsite.innerText = hospitalInfo.website || 'N/A';
+                    hospitalWebsite.href = hospitalInfo.website || '#';
+
+                    const modal = document.getElementById('hospitalModal');
+                    modal.style.display = 'flex';
+                    document.body.classList.add('blur'); // Add blur effect
+                document.body.style.overflow = 'hidden'; // Disable scrolling
+
+                    initMap(hospitalInfo.lat, hospitalInfo.lon, hospitalImage); // Initialize the map
+                }
+
+                // Close modal
+                const closeModalButton = document.getElementById('closeModal');
+                closeModalButton.onclick = function() {
+                    const modal = document.getElementById('hospitalModal');
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                };
+
+                // Initialize the map in the modal
+                function initMap(lat, lon, hospitalImage) {
+                    if (map) {
+                        map.remove(); // Remove previous map instance
+                    }
+                    map = L.map('map').setView([lat, lon], 15);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                    }).addTo(map);
+                    L.marker([lat, lon]).addTo(map);
+                }
             });
         </script>
     </div>
 </body>
 </html>
+

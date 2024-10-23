@@ -22,7 +22,6 @@
               <li><a href="mainstore2.html">Store</a></li>
               <li><a href="index.html">Appointments</a></li>
               <li><a class="active" href="donation.html">Organ Donations</a></li>
-              <li><a href="index.html">Health Tracker</a></li>
               <li><a href="index.html">Blog</a></li>
             </ul>
           </div>
@@ -68,19 +67,21 @@
             <div class="form-group">
                 <label for="organ">Organ Donation</label>
                 <select name="organ" id="organ">
-                    <option value="Kidney">   Kidney</option>
-                    <option value="Heart">Heart</option>
-                    <option value="Lungs">Lungs</option>
-                    <option value="Stomach">Stomach</option>
+                    <option class="organ-option" value="">Select An Option</option>
+                    <option class="organ-option" value="Kidney">Kidney</option>
+                    <option class="organ-option" value="Heart">Heart</option>
+                    <option class="organ-option" value="Lungs">Lungs</option>
+                    <option class="organ-option" value="Stomach">Stomach</option>
                 </select>
             </div>
 
             <button type="submit" class="submit">SUBMIT</button>
         </form>
-        <div class="loda">
+        <div class="organ">
             <img id="organ-image" src="" alt="Organ Image" style="display: none;">
         </div>
     </div>
+    <div id="error"></div>
 </body>
 <script src="donation.js"></script>
 </html>
