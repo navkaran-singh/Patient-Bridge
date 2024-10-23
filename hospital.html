@@ -1,228 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hospitals</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="hospital.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="hospital.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
-  
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        <div class="nav">
-            <div class="logo">Patient Bridge</div>
-            <div class="menu-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a class="active" href="hospital.html">Hospitals</a></li>
-                    <li><a href="mainstore2.html">Store</a></li>
-                    <li><a href="index.html">Appointments</a></li>
-                    <li><a href="donation.html">Organ Donations</a></li>
-                    <li><a href="index.html">Health Tracker</a></li>
-                    <li><a href="index.html">Blog</a></li>
-                </ul>
-            </div>
-            <div class="search"><i class="fa fa-search"></i></div>
-            <div class="account">my account</div>
-            <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+      <div class="nav">
+        <div class="logo">Patient Bridge</div>
+        <div class="menu-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="hospital.html">Hospitals</a></li>
+            <li><a href="mainstore2.html">Store</a></li>
+            <li><a href="index.html">Appointments</a></li>
+            <li><a href="donation.html">Organ Donations</a></li>
+            <li><a href="index.html">Health Tracker</a></li>
+            <li><a href="index.html">Blog</a></li>
+          </ul>
         </div>
+        <div class="search"><i class="fa fa-search"></i></div>
+        <div class="account">my account</div>
+        <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+      </div>
 
-        <div class="content">
-            <div class="title">Hospitals</div>
-            <div class="juice">
-                <img src="img/y2.png" alt="">
-            </div>
+      <div class="content">
+        <div class="title">Hospitals</div>
+        <div class="juice">
+          <img src="img/y2.png" alt="" />
         </div>
+      </div>
 
-        <div class="secpage">
-            <div class="box1">
-                <h1>Comprehensive Care at Every Location</h1>
-                <input type="text" placeholder="Enter your city" class="search-input" id="cityInput"/>
-                <div class="butt">
-                    <button class="location-btn" id="searchButton">City Search</button>
-                    <button class="location-btn" id="locationButton">Current Location</button>
-                </div>
-            </div>
-            <div class="ok">
-                <img src="img/portrait-smiling-young-woman-doctor-healthcare-medical-worker-pointing-fingers-left-showing-clini.png" style="height:60vh; width: auto; margin-top: 3px;">
-            </div>
+      <div class="secpage">
+        <div class="box1">
+          <h1>Comprehensive Care at Every Location</h1>
+          <input
+            type="text"
+            placeholder="Enter your city"
+            class="search-input"
+            id="cityInput"
+          />
+          <div class="butt">
+            <button class="location-btn" id="searchButton">City Search</button>
+            <button class="location-btn" id="locationButton">
+              Current Location
+            </button>
+          </div>
         </div>
-
-        <div class="heading">
-            <h1>Available Hospitals</h1>
+        <div class="ok">
+          <img
+            src="img/portrait-smiling-young-woman-doctor-healthcare-medical-worker-pointing-fingers-left-showing-clini.png"
+            style="height: 60vh; width: auto; margin-top: 3px"
+          />
         </div>
-          
-        <div class="details" id="hospitalList"></div>
-        <p class="error" id="errorMessage" style="display:none;">No hospitals found or an error occurred.</p>
-        <div class="modal" id="hospitalModal">
-            <div class="modal-content">
-                <span class="close-btn" id="closeModal">&times;</span>
-                <div class="modal-image">
-                    <img src="" alt="Hospital Image" id="modalImage">
-                </div>
-                <div class="modal-info">
-                    <h2 id="hospitalName"></h2>
-                    <p><strong>Address:</strong> <span id="hospitalAddress"></span></p>
-                    <p><strong>Phone:</strong> <span id="hospitalPhone"></span></p>
-                    <p><strong>Email:</strong> <span id="hospitalEmail"></span></p>
-                    <p><strong>Website:</strong> <a id="hospitalWebsite" target="_blank"></a></p>
-                    <button class="enquiry-btn">Enquire Now</button>
-                </div>
-            </div>
+      </div>
+
+      <div class="heading">
+        <h1>Available Hospitals</h1>
+      </div>
+
+      <div class="details" id="hospitalList"></div>
+      <p class="error" id="errorMessage" style="display: none">
+        No hospitals found or an error occurred.
+      </p>
+      <div class="modal" id="hospitalModal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeModal">&times;</span>
+          <div class="modal-image">
+            <img src="" alt="Hospital Image" id="modalImage" />
+          </div>
+          <div class="modal-info">
+            <h2 id="hospitalName"></h2>
+            <p><strong>Address:</strong> <span id="hospitalAddress"></span></p>
+            <p><strong>Phone:</strong> <span id="hospitalPhone"></span></p>
+            <p><strong>Email:</strong> <span id="hospitalEmail"></span></p>
+            <p>
+              <strong>Website:</strong>
+              <a id="hospitalWebsite" target="_blank"></a>
+            </p>
+            <button class="enquiry-btn">Enquire Now</button>
+          </div>
         </div>
+      </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const cityInput = document.getElementById('cityInput');
-                const searchButton = document.getElementById('searchButton');
-                const locationButton = document.getElementById('locationButton');
-                const hospitalList = document.getElementById('hospitalList');
-                const errorMessage = document.getElementById('errorMessage');
-                const API_KEY = 'ca277f684e914ee8b72058fbc5134660';
-                const FLICKR_API_KEY = 'd83f91618287d8d3cb1de4572c6f9946';
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const cityInput = document.getElementById("cityInput");
+          const searchButton = document.getElementById("searchButton");
+          const locationButton = document.getElementById("locationButton");
+          const hospitalList = document.getElementById("hospitalList");
+          const errorMessage = document.getElementById("errorMessage");
+          const API_KEY = "ca277f684e914ee8b72058fbc5134660";
+          const FLICKR_API_KEY = "d83f91618287d8d3cb1de4572c6f9946";
 
-                // Search by city
-                searchButton.addEventListener('click', async function () {
-                    const city = cityInput.value.trim();
-                    hospitalList.innerHTML = '';  // Clear previous results
-                    errorMessage.style.display = 'none';
+          // Search by city
+          searchButton.addEventListener("click", async function () {
+            const city = cityInput.value.trim();
+            hospitalList.innerHTML = ""; // Clear previous results
+            errorMessage.style.display = "none";
 
-                    try {
-                        const coordinates = await getCoordinates(city);
-                        const hospitals = await fetchHospitals(coordinates);
-                        displayHospitals(hospitals);
-                    } catch (error) {
-                        console.error('Error fetching hospital data:', error);
-                        errorMessage.style.display = 'block';
-                    }
-                });
+            try {
+              const coordinates = await getCoordinates(city);
+              const hospitals = await fetchHospitals(coordinates);
+              displayHospitals(hospitals);
+            } catch (error) {
+              console.error("Error fetching hospital data:", error);
+              errorMessage.style.display = "block";
+            }
+          });
 
-                // Search by current location
-                locationButton.addEventListener('click', async function () {
-                    hospitalList.innerHTML = '';  // Clear previous results
-                    errorMessage.style.display = 'none';
+          // Search by current location
+          locationButton.addEventListener("click", async function () {
+            hospitalList.innerHTML = ""; // Clear previous results
+            errorMessage.style.display = "none";
 
-                    try {
-                        const coordinates = await getLocation();
-                        const hospitals = await fetchHospitals(coordinates);
-                        displayHospitals(hospitals);
-                    } catch (error) {
-                        console.error('Error fetching hospital data:', error);
-                        errorMessage.style.display = 'block';
-                    }
-                });
+            try {
+              const coordinates = await getLocation();
+              const hospitals = await fetchHospitals(coordinates);
+              displayHospitals(hospitals);
+            } catch (error) {
+              console.error("Error fetching hospital data:", error);
+              errorMessage.style.display = "block";
+            }
+          });
 
-                // Get coordinates by city
-                async function getCoordinates(city) {
-                    const geocodeUrl = `https://api.geoapify.com/v1/geocode/search?text=${city}&apiKey=${API_KEY}`;
-                    const response = await fetch(geocodeUrl);
-                    const data = await response.json();
-                    if (data.features.length === 0) {
-                        throw new Error('City not found');
-                    }
-                    const { lat, lon } = data.features[0].properties;
-                    return { lat, lon };
-                }
+          // Get coordinates by city
+          async function getCoordinates(city) {
+            const geocodeUrl = `https://api.geoapify.com/v1/geocode/search?text=${city}&apiKey=${API_KEY}`;
+            const response = await fetch(geocodeUrl);
+            const data = await response.json();
+            if (data.features.length === 0) {
+              throw new Error("City not found");
+            }
+            const { lat, lon } = data.features[0].properties;
+            return { lat, lon };
+          }
 
-                // Get current location
-                function getLocation() {
-                    return new Promise((resolve, reject) => {
-                        if (navigator.geolocation) {
-                            navigator.geolocation.getCurrentPosition(
-                                (position) => {
-                                    const { latitude, longitude } = position.coords;
-                                    resolve({ lat: latitude, lon: longitude });
-                                },
-                                (error) => {
-                                    reject(new Error("Geolocation error: " + error.message));
-                                }
-                            );
-                        } else {
-                            reject(new Error("Geolocation is not supported by this browser."));
-                        }
-                    });
-                }
+          // Get current location
+          function getLocation() {
+            return new Promise((resolve, reject) => {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                  (position) => {
+                    const { latitude, longitude } = position.coords;
+                    resolve({ lat: latitude, lon: longitude });
+                  },
+                  (error) => {
+                    reject(new Error("Geolocation error: " + error.message));
+                  }
+                );
+              } else {
+                reject(
+                  new Error("Geolocation is not supported by this browser.")
+                );
+              }
+            });
+          }
 
-                // Fetch hospitals
-                async function fetchHospitals({ lat, lon }) {
-                    const url = `https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=circle:${lon},${lat},10000&apiKey=${API_KEY}`;
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                        throw new Error('Error fetching data');
-                    }
-                    const data = await response.json();
-                    if (data.features.length === 0) {
-                        throw new Error('No hospitals found');
-                    }
-                    return data.features;
-                }
+          // Fetch hospitals
+          async function fetchHospitals({ lat, lon }) {
+            const url = `https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=circle:${lon},${lat},10000&apiKey=${API_KEY}`;
+            const response = await fetch(url);
+            if (!response.ok) {
+              throw new Error("Error fetching data");
+            }
+            const data = await response.json();
+            if (data.features.length === 0) {
+              throw new Error("No hospitals found");
+            }
+            return data.features;
+          }
 
-                // Fetch hospital images from Flickr
-                async function fetchHospitalImage(hospitalName) {
-                    const flickrUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${FLICKR_API_KEY}&text=${encodeURIComponent(hospitalName)}&format=json&nojsoncallback=1`;
-                    const response = await fetch(flickrUrl);
-                    if (!response.ok) {
-                        throw new Error('Error fetching image data');
-                    }
-                    const data = await response.json();
-                    if (data.photos.photo.length > 0) {
-                        const photo = data.photos.photo[0];
-                        return `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
-                    }
-                    throw new Error('No images found');
-                }
-                
+          // Fetch hospital images from Flickr
+          async function fetchHospitalImage(hospitalName) {
+            const flickrUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${FLICKR_API_KEY}&text=${encodeURIComponent(
+              hospitalName
+            )}&format=json&nojsoncallback=1`;
+            const response = await fetch(flickrUrl);
+            if (!response.ok) {
+              throw new Error("Error fetching image data");
+            }
+            const data = await response.json();
+            if (data.photos.photo.length > 0) {
+              const photo = data.photos.photo[0];
+              return `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+            }
+            throw new Error("No images found");
+          }
 
-            // Display hospitals
-async function displayHospitals(hospitals) {
-    for (const hospital of hospitals) {
-        const hospitalInfo = hospital.properties;
-        const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
-        console.log(hospital.properties);
-        const hospitalElement = document.createElement('div');
-        hospitalElement.classList.add('hospital-card'); // Add the card class
-        
-        hospitalElement.innerHTML = `
-            <img src="${hospitalImage || 'img/default-hospital.jpg'}" alt="${hospitalInfo.name}">
+          // Display hospitals
+          async function displayHospitals(hospitals) {
+            for (const hospital of hospitals) {
+              const hospitalInfo = hospital.properties;
+              const hospitalImage = await fetchHospitalImage(
+                hospitalInfo.name
+              ).catch(() => null);
+              console.log(hospital.properties);
+              const hospitalElement = document.createElement("div");
+              hospitalElement.classList.add("hospital-card"); // Add the card class
+
+              hospitalElement.innerHTML = `
+            <img src="${hospitalImage || "img/default-hospital.jpg"}" alt="${
+                hospitalInfo.name
+              }">
             <h1>${hospitalInfo.name}</h1>
             <button>Preview</button>
         `;
-        
-        hospitalList.appendChild(hospitalElement);
-        hospitalElement.querySelector('button').addEventListener('click', () => {
-                            openModal(hospital);
-                        });
-    }
-}
-async function  openModal (hospital) {
-    const hospitalInfo = hospital.properties; // Use the passed hospital object
-    const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
-    
-    modalImage.src = hospitalImage || 'img/default-hospital.jpg'; // Set image source
-    hospitalName.textContent = hospitalInfo.name; // Set hospital name
-    hospitalAddress.textContent = hospitalInfo.address_line2 || "Address not available"; // Set address
-    hospitalEmail.textContent=hospitalInfo.contact.email || "Email not availabe";
-    hospitalPhone.textContent = hospitalInfo.contact.phone || "Phone not available"; // Set phone
-    hospitalWebsite.textContent = hospitalInfo.website || "Website not available"; // Set website
-    hospitalWebsite.href = hospitalInfo.website || "#"; // Set website link
-    
-    hospitalModal.style.display = 'flex'; // Show modal
-    document.body.classList.add('blur'); // Add blur effect
-    document.body.style.overflow = 'hidden'; // Disable scrolling
-}
 
-                closeModal.addEventListener('click', function () {
-                    hospitalModal.style.display = 'none';
-                    document.body.classList.remove('blur');
-                    document.body.style.overflow = 'auto'; 
-                    displayHospitals();
+              hospitalList.appendChild(hospitalElement);
+              hospitalElement
+                .querySelector("button")
+                .addEventListener("click", () => {
+                  openModal(hospital);
                 });
-            });
-        </script>
+            }
+          }
+          async function openModal(hospital) {
+            const hospitalInfo = hospital.properties; // Use the passed hospital object
+            const hospitalImage = await fetchHospitalImage(
+              hospitalInfo.name
+            ).catch(() => null);
+
+            modalImage.src = hospitalImage || "img/default-hospital.jpg"; // Set image source
+            hospitalName.textContent = hospitalInfo.name; // Set hospital name
+            hospitalAddress.textContent =
+              hospitalInfo.address_line2 || "Address not available"; // Set address
+            hospitalEmail.textContent =
+              hospitalInfo.contact.email || "Email not availabe";
+            hospitalPhone.textContent =
+              hospitalInfo.contact.phone || "Phone not available"; // Set phone
+            hospitalWebsite.textContent =
+              hospitalInfo.website || "Website not available"; // Set website
+            hospitalWebsite.href = hospitalInfo.website || "#"; // Set website link
+
+            hospitalModal.style.display = "flex"; // Show modal
+            document.body.classList.add("blur"); // Add blur effect
+            document.body.style.overflow = "hidden"; // Disable scrolling
+          }
+
+          closeModal.addEventListener("click", function () {
+            hospitalModal.style.display = "none";
+            document.body.classList.remove("blur");
+            document.body.style.overflow = "auto";
+            displayHospitals();
+          });
+        });
+      </script>
     </div>
-</body>
+  </body>
 </html>
