@@ -10,7 +10,7 @@ const email = document.getElementById("email");
 const dob = document.getElementById("dob");
 const selectedOrgan = document.getElementById("organ");
 
-const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,8}$/;
+const emailRegex = /^[a-zA-Z0-9\.]+@[a-zA-Z]+\.[a-zA-Z\.]{2,8}$/;
 
 window.onload = () => {
   console.log(decodeURIComponent(document.cookie));
@@ -19,6 +19,7 @@ window.onload = () => {
   if (cookies.includes("user")) {
     cookie = cookies.split("user=")[1];
     cookie = JSON.parse(cookie);
+    console.log({ ...cookie, verified: false });
     error.innerHTML = `
       <h3>Already Signed In</h3>
       <p>Welcome ${cookie.name}</p>
@@ -49,11 +50,14 @@ submit.addEventListener("click", (e) => {
   } else if (selectedOrgan.value === "") {
     return (error.innerHTML = "<h1>Please Select A Valid Organ</h1>");
   }
+  console.log("Passed All Checks");
 
   const user = { name: userName.value, email: email.value };
   console.log(user);
   const now = new Date();
-  const expire = new Date(now.getTime() + 20 * 60 * 1000).toUTCString();
+  const expire = new Date(
+    now.getTime() + 10 * 24 * 60 * 60 * 1000
+  ).toUTCString();
 
   document.cookie = `user=${encodeURIComponent(
     JSON.stringify(user)

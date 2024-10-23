@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Verification</title>
+  </head>
+  <body>
+    <h1>Email Verification</h1>
+    <button id="send-email">Send Verification Email</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sendEmailButton = document.getElementById("send-email");
+
+        sendEmailButton.addEventListener("click", async () => {
+          const email = "navkaransinghbakshi04@gmail.com";
+          const verificationToken = "e5f39fe7596c";
+
+          try {
+            const response = await fetch("/send-verification-email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, verificationToken }),
+            });
+
+            const message = await response.text();
+            console.log("Server response:", message);
+          } catch (error) {
+            console.error("Error sending email:", error);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
