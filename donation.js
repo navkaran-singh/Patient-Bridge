@@ -11,6 +11,18 @@ const dob = document.getElementById("dob");
 const selectedOrgan = document.getElementById("organ");
 
 const emailRegex = /^[a-zA-Z0-9]+@[a-zA-Z]+\.[a-zA-Z]{2,8}$/;
+const accountSection = document.querySelector(".account");
+
+function showPopup(message, type = 'error') {
+  error.innerHTML = message;
+  error.style.display = 'block';
+  error.style.backgroundColor = type === 'error' ? '#f44336' : '#4CAF50'; // Red for error, Green for success
+
+  // Hide after 3 seconds
+  setTimeout(() => {
+    error.style.display = 'none';
+  }, );
+}
 
 window.onload = () => {
   console.log(decodeURIComponent(document.cookie));
@@ -19,11 +31,11 @@ window.onload = () => {
   if (cookies.includes("user")) {
     cookie = cookies.split("user=")[1];
     cookie = JSON.parse(cookie);
-    error.innerHTML = `
-      <h3>Already Signed In</h3>
-      <p>Welcome ${cookie.name}</p>
-    `;
+    showPopup(`<h3>Already Signed In</h3><p>Welcome ${cookie.name}</p>`, 'success');
     submit.disabled = true;
+
+    // Replace the "my account" text with "Already Signed In Nihar Sandhu" (or cookie-based user name)
+    accountSection.innerHTML = `Already Signed In ${cookie.name}`;
   }
 };
 
@@ -35,19 +47,19 @@ submit.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (userName.value === "") {
-    return (error.innerHTML = "<h1>Empty Name, Enter A Valid Name</h1>");
+    return showPopup("<h1>Empty Name, Enter A Valid Name</h1>");
   } else if (parent.value === "") {
-    return (error.innerHTML = "<h1>Empty Parent Name, Enter A Valid Name</h1>");
+    return showPopup("<h1>Empty Parent Name, Enter A Valid Name</h1>");
   } else if (address.value === "") {
-    return (error.innerHTML = "<h1>Empty Address, Enter A Valid Address</h1>");
+    return showPopup("<h1>Empty Address, Enter A Valid Address</h1>");
   } else if (city.value === "") {
-    return (error.innerHTML = "<h1>Empty City, Enter A Valid City</h1>");
+    return showPopup("<h1>Empty City, Enter A Valid City</h1>");
   } else if (!validateEmail(email.value)) {
-    return (error.innerHTML = "<h1>Invalid Email</h1>");
+    return showPopup("<h1>Invalid Email</h1>");
   } else if (dob.value === "") {
-    return (error.innerHTML = "<h1>Empty Date, Select A Valid Date</h1>");
+    return showPopup("<h1>Empty Date, Select A Valid Date</h1>");
   } else if (selectedOrgan.value === "") {
-    return (error.innerHTML = "<h1>Please Select A Valid Organ</h1>");
+    return showPopup("<h1>Please Select A Valid Organ</h1>");
   }
 
   const user = { name: userName.value, email: email.value };
@@ -58,6 +70,8 @@ submit.addEventListener("click", (e) => {
   document.cookie = `user=${encodeURIComponent(
     JSON.stringify(user)
   )}; expires=${expire}; secure`;
+
+  showPopup("<h1>Form Submitted Successfully</h1>", "success");
 });
 
 organ.addEventListener("change", (e) => {
