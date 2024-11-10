@@ -13,10 +13,17 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="hospital.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="hospital.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
   </head>
   <body>
+</head>
+<body>
     <div class="wrapper">
       <div class="nav">
         <div class="logo">Patient Bridge</div>
@@ -35,6 +42,21 @@
         <div class="account">my account</div>
         <div class="cart"><i class="fa fa-shopping-cart"></i></div>
       </div>
+        <div class="nav">
+            <div class="logo">Patient Bridge</div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="hospital.html">Hospitals</a></li>
+                    <li><a href="mainstore2.html">Store</a></li>
+                    <li><a href="index.html">Appointments</a></li>
+                    <li><a href="donation.html">Organ Donations</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="account">my account</div>
+            <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+        </div>
 
       <div class="content">
         <div class="title">Hospitals</div>
@@ -94,6 +116,26 @@
           </div>
         </div>
       </div>
+        <div class="heading">
+            <h1>Available Hospitals</h1>
+        </div>
+          
+        <div class="details" id="hospitalList"></div>
+        <p class="error" id="errorMessage" style="display:none;">No hospitals found or an error occurred.</p>
+        <div class="modal" id="hospitalModal">
+            <div class="modal-content">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <div id="map" style="height: 100%; width: 50%; overflow: hidden;"></div>
+                <div class="modal-info">
+                    <h2 id="hospitalName"></h2>
+                    <p><strong>Address:</strong> <span id="hospitalAddress"></span></p>
+                    <p><strong>Phone:</strong> <span id="hospitalPhone"></span></p>
+                    <p><strong>Email:</strong> <span id="hospitalEmail"></span></p>
+                    <p><strong>Website:</strong> <a id="hospitalWebsite" target="_blank"></a></p>
+                    <button class="enquiry-btn">Enquire Now</button>
+                </div>
+            </div>
+        </div>
 
       <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -104,6 +146,17 @@
           const errorMessage = document.getElementById("errorMessage");
           const API_KEY = "ca277f684e914ee8b72058fbc5134660";
           const FLICKR_API_KEY = "d83f91618287d8d3cb1de4572c6f9946";
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const cityInput = document.getElementById('cityInput');
+                const searchButton = document.getElementById('searchButton');
+                const locationButton = document.getElementById('locationButton');
+                const hospitalList = document.getElementById('hospitalList');
+                const errorMessage = document.getElementById('errorMessage');
+                const API_KEY = 'ca277f684e914ee8b72058fbc5134660';
+                const FLICKR_API_KEY = 'd83f91618287d8d3cb1de4572c6f9946';
+
+                let map; // Declare the map variable globally
 
           // Search by city
           searchButton.addEventListener("click", async function () {
@@ -199,6 +252,20 @@
             }
             throw new Error("No images found");
           }
+                // Fetch hospital images from Flickr
+                async function fetchHospitalImage(hospitalName) {
+                    const flickrUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${FLICKR_API_KEY}&text=${encodeURIComponent(hospitalName)}&format=json&nojsoncallback=1`;
+                    const response = await fetch(flickrUrl);
+                    if (!response.ok) {
+                        throw new Error('Error fetching image data');
+                    }
+                    const data = await response.json();
+                    if (data.photos.photo.length > 0) {
+                        const photo = data.photos.photo[0];
+                        return `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+                    }
+                    throw new Error('No images found');
+                }
 
           // Display hospitals
           async function displayHospitals(hospitals) {
@@ -258,6 +325,72 @@
           });
         });
       </script>
+                // Display hospitals
+                async function displayHospitals(hospitals) {
+                    for (const hospital of hospitals) {
+                        const hospitalInfo = hospital.properties;
+                        const hospitalImage = await fetchHospitalImage(hospitalInfo.name).catch(() => null);
+
+                        const hospitalElement = document.createElement('div');
+                        hospitalElement.classList.add('hospital-card'); // Add the card class
+    
+
+                        hospitalElement.innerHTML = `
+                            <img src="${hospitalImage || 'img/default-hospital.jpg'}" alt="${hospitalInfo.name}">
+                            <h1>${hospitalInfo.name}</h1>
+                            <button>Preview</button>
+                        `;
+
+                        hospitalList.appendChild(hospitalElement);
+                        hospitalElement.querySelector('button').addEventListener('click', () => showHospitalModal(hospitalInfo, hospitalImage));
+                    }
+                }
+
+                // Show modal with hospital details
+                function showHospitalModal(hospitalInfo, hospitalImage) {
+                    const hospitalName = document.getElementById('hospitalName');
+                    const hospitalAddress = document.getElementById('hospitalAddress');
+                    const hospitalPhone = document.getElementById('hospitalPhone');
+                    const hospitalEmail = document.getElementById('hospitalEmail');
+                    const hospitalWebsite = document.getElementById('hospitalWebsite');
+
+                    hospitalName.innerText = hospitalInfo.name;
+                    hospitalAddress.innerText = hospitalInfo.formatted;
+                    hospitalPhone.innerText = hospitalInfo.contact.phone || 'N/A';
+                    hospitalEmail.innerText = hospitalInfo.contact.email || 'N/A';
+                    hospitalWebsite.innerText = hospitalInfo.website || 'N/A';
+                    hospitalWebsite.href = hospitalInfo.website || '#';
+
+                    const modal = document.getElementById('hospitalModal');
+                    modal.style.display = 'flex';
+                    document.body.classList.add('blur'); // Add blur effect
+                document.body.style.overflow = 'hidden'; // Disable scrolling
+
+                    initMap(hospitalInfo.lat, hospitalInfo.lon, hospitalImage); // Initialize the map
+                }
+
+                // Close modal
+                const closeModalButton = document.getElementById('closeModal');
+                closeModalButton.onclick = function() {
+                    const modal = document.getElementById('hospitalModal');
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                };
+
+                // Initialize the map in the modal
+                function initMap(lat, lon, hospitalImage) {
+                    if (map) {
+                        map.remove(); // Remove previous map instance
+                    }
+                    map = L.map('map').setView([lat, lon], 15);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                    }).addTo(map);
+                    L.marker([lat, lon]).addTo(map);
+                }
+            });
+        </script>
     </div>
   </body>
 </html>
+

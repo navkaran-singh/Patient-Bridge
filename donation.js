@@ -84,7 +84,12 @@ organ.addEventListener("change", (e) => {
     Heart: "./img/heart.png",
     Lungs: "./img/lungs.png",
     Stomach: "./img/stomach.png",
+    Kidney: "./img/kidney.png",
+    Heart: "./img/heart.png",
+    Lungs: "./img/lungs.png",
+    Stomach: "./img/stomach.png",
   };
   imgElement.src = organImages[e.target.value];
   imgElement.style.display = "block";
 });
+
