@@ -7,7 +7,6 @@ import cookieParser from "cookie-parser";
 
 import { VERIFICATION_EMAIL_TEMPLATE } from "./email/emailTemplates.js";
 
-// Load environment variables from .env
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -20,6 +19,17 @@ const PORT = 3000;
 // Serve static files from the current directory
 app.use(express.static(__dirname));
 app.use(express.json());
+
+// Path to React build folder
+const reactBuildPath = path.join(__dirname, "react-page/build");
+
+// Serve the React app's build folder for any request to /react-page
+app.use("/react-page", express.static(reactBuildPath));
+
+// Serve the React page's index.html for any unmatched route within /react-page
+app.get("/react-page/*", (req, res) => {
+  res.sendFile(path.join(reactBuildPath, "index.html"));
+});
 
 // Mailtrap client setup
 const client = new MailtrapClient({ token: process.env.MAILTRAP_TOKEN });
@@ -44,7 +54,6 @@ app.post("/send-verification-email", async (req, res) => {
       to: [{ email }],
       subject: "Verify Your Email",
       html: VERIFICATION_EMAIL_TEMPLATE.replace(
-        // this is a template provided by yt'er
         "{verificationCode}",
         verificationToken
       ),
