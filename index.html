@@ -1,234 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://api.fontshare.com/v2/css?f[]=new-title@400,500&display=swap"
-      rel="stylesheet"
-    />
-    <title>Patient Bridge</title>
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <div class="nav">
-        <div class="logo">Patient Bridge</div>
-
-        <div class="menu-links">
-          <ul>
-            <li><a href="hospital.html">Hospitals</a></li>
-            <li><a href="index.html">Store</a></li>
-            <li><a href="index.html">Appointments</a></li>
-            <li><a href="index.html">Donations</a></li>
-            <li><a href="index.html">Health Tracker</a></li>
-            <li><a href="index.html">Blog</a></li>
-          </ul>
-        </div>
-
-        <div class="search"><i class="fa fa-search"></i></div>
-
-        <div class="account">my account</div>
-
-        <div class="cart"><i class="fa fa-shopping-cart"></i></div>
-      </div>
-      <div class="content">
-        <div class="tagline">Find your hospital</div>
-
-        <div class="pages"><span>1</span>/6</div>
-
-        <div class="title">Healthcare</div>
-
-        <div class="more"><a href="#">show all the hospitals</a></div>
-
-        <div class="desc">
-          <p>
-            Your <span>healthy</span> life <br />
-            starts here with us
-          </p>
-          <p>
-            A family-owned company founded with the purpose of giving your
-            family access to clean, organic products while you are on the go.
-          </p>
-        </div>
-      </div>
-
-      <div class="juice">
-        <img src="./img/file.png" alt="" />
-      </div>
-
-      <div class="leaves">
-        <ul id="scene">
-          <li class="layer" data-depth="-.1">
-            <img src="./img/m2.png" style="height: 92.53px; width: 100px" />
-          </li>
-          <li class="layer" data-depth="-.3">
-            <img src="./img/m5.png" style="height: 120px; width: 120px" />
-          </li>
-          <li class="layer" data-depth="-1.5">
-            <img src="./img/m4.png" style="height: 165px; width: 220px" />
-          </li>
-          <li class="layer" data-depth=".1">
-            <img src="./img/m3.png" style="height: 140px; width: 140px" />
-          </li>
-          <li class="layer" data-depth=".3">
-            <img src="./img/m1.webp" style="height: 120px; width: 120px" />
-          </li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://api.fontshare.com/v2/css?f[]=new-title@400,500&display=swap" rel="stylesheet">
+  <title>Patient Bridge</title>
+</head>
+<body >
+  <div class="wrapper">
+    <div class="nav">
+      <div class="logo">Patient Bridge</div>
+      <div class="menu-links">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="hospital.html">Hospitals</a></li>
+          <li><a href="mainstore2.html">Store</a></li>
+          <li><a href="index.html">Appointments</a></li>
+          <li><a href="donation.html">Organ Donations</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
 
-      <div class="arrows">
-        <button class="prev"><i class="fa fa-chevron-left"></i></button>
-        <button class="next"><i class="fa fa-chevron-right"></i></button>
-      </div>
+     
+
+      <div class="account"> <a href="http://localhost:3000/email">My Account</a></div>
+
+      <div class="cart"><i class="fa fa-shopping-cart"></i></div>
     </div>
-    <div class="secpage">
-      <div class="box1">
-        <h1>Bridging the Gap Between You and Your Health .</h1>
+    <div class="content">
+      <div class="tagline">Find your hospital</div>
+
+      <div class="pages"><span>1</span>/6</div>
+
+      <div class="title">Healthcare</div>
+
+      <div class="more"><a href="hospital.html">show all the hospitals</a></div>
+
+      <div class="desc">
         <p>
-          At Patient First, we understand the importance of timely and reliable
-          healthcare. Our platform serves as a bridge, connecting you to a
-          network of experienced healthcare professionals and essential medical
-          services.
+          Your <span>healthy</span> life <br>
+          starts here with us
+        </p>
+        <p>
+          A family-owned company founded with the purpose of giving your family access to clean, organic products while
+          you are on the go.
         </p>
       </div>
-      <div class="ok">
-        <img
-          src="./img/doctor-nurses-special-equipment.png"
-          style="height: 60vh; width: auto; margin-top: 3px"
-        />
-      </div>
     </div>
-    <div class="container">
-      <div class="elem">
-        <div class="elem-part1">
-          <h2>Mental health matters .</h2>
-          <div class="empty"></div>
-          <div class="dog">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
-              ></path>
-            </svg>
-            <h4>Learn More</h4>
-          </div>
-        </div>
-        <div class="elem-part2">
-          <img src="./img/2.jpg" style="height: 32vh" />
-        </div>
-      </div>
-      <div class="elem-dark">
-        <div class="elem-part1">
-          <h2>Our vast hospital network.</h2>
-          <div class="empty"></div>
-          <div class="dog">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
-              ></path>
-            </svg>
-            <h4>Learn More</h4>
-          </div>
-        </div>
-        <div class="elem-part2">
-          <img src="./img/ec.png" />
-        </div>
-      </div>
-      <div class="elem-dark">
-        <div class="elem-part1">
-          <h2>"Be a Hero: The Impact of Blood Donation"</h2>
-          <div class="empty"></div>
-          <div class="dog">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
-              ></path>
-            </svg>
-            <h4>Learn More</h4>
-          </div>
-        </div>
-        <div class="elem-part2">
-          <img src="./img/download.png" />
-        </div>
-      </div>
-      <div class="elem">
-        <div class="elem-part1">
-          <h2>Choosing a Reliable Online Pharmacy .</h2>
-          <div class="empty"></div>
-          <div class="dog">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path
-                d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
-              ></path>
-            </svg>
-            <h4>Learn More</h4>
-          </div>
-        </div>
-        <div class="elem-part2">
-          <img src="./img/d2.jpg" />
-        </div>
-      </div>
-    </div>
-    <br /><br />
-    <div class="logos">
-      <img src="./img/l1.png" />
-      <img src="./img/l2.png" />
-      <img src="./img/l3.png" />
-      <img src="./img/l4.png" />
-      <img src="./img/l5.png" />
-      <img src="./img/l6.png" />
 
-      <img src="./img/l1.png" />
-      <img src="./img/l2.png" />
-      <img src="./img/l3.png" />
-      <img src="./img/l4.png" />
-      <img src="./img/l5.png" />
-      <img src="./img/l6.png" />
+    <div class="juice">
+      <img src="./img/file.png" alt="">
     </div>
-    <br /><br />
-    <div class="last">
-      <div class="footer">
-        <div class="foot1">
-          <h4>About Us</h4>
-          <h4>Blog</h4>
-          <h4>Legal</h4>
-          <h4>FAQ</h4>
+
+    <div class="leaves">
+      <ul id="scene">
+        <li class="layer" data-depth="-.1">
+          <img src="./img/m2.png"  style="height:92.53px; width: 100px;">
+        </li>
+        <li class="layer" data-depth="-.3">
+          <img src="./img/m5.png" style="height:120px ; width: 120px;">
+        </li>
+        <li class="layer" data-depth="-1.5">
+          <img src="./img/m4.png" style="height:165px; width: 220px;">
+        </li>
+        <li class="layer" data-depth=".1">
+          <img src=
+          "./img/m3.png" style="height:140px ; width: 140px;">
+        </li>
+        <li class="layer" data-depth=".3">
+          <img src="./img/m1.webp" style="height:120px; width:120px;">
+        </li>
+      </ul>
+    </div>
+
+    <div class="arrows">
+      <button class="prev"><i class="fa fa-chevron-left"></i></button>
+      <button class="next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <div class="secpage">
+    <div class="box1">
+    <h1>Bridging the Gap Between You and Your Health .</h1>
+    <p>At Patient First, we understand the importance of timely and reliable healthcare. Our platform serves as a bridge, connecting you to a network of experienced healthcare professionals and essential medical services.</p>
+    </div>
+    <div class="ok">
+      <img src="./img/doctor-nurses-special-equipment.png" style="height:60vh; width: auto; margin-top: 3px; ">
+    </div>
+  </div>
+<div class="container">
+  <div class="elem">
+  <div class="elem-part1">
+    <h2>Mental health matters .</h2>
+    <div class="empty"></div>
+    <div class="dog">
+   <a href="blog.html"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg></a>
+    <h4>Learn More</h4>
+    </div>
+    </div>
+  <div class="elem-part2">
+    <img src="./img/2.jpg" style="height:32vh ;">
+  </div>
+  </div>
+  <div class="elem-dark">
+  <div class="elem-part1">
+    <h2>Our vast hospital network.</h2>
+    <div class="empty"></div>
+    <div class="dog">
+   <a href="hospital.html"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg></a>
+    <h4>Learn More</h4>
+    </div>
+    </div>
+  <div class="elem-part2">
+  <img src="./img/ec.png">
+  </div>
+  </div>
+  <div class="elem-dark">
+  <div class="elem-part1">
+    <h2>"Be a Hero: The Impact of Blood Donation"</h2>
+    <div class="empty"></div>
+    <div class="dog">
+    <a href="donation.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg></a>
+    <h4>Learn More</h4>
+    </div>
+  </div>
+  <div class="elem-part2">
+    <img src="./img/download.png">
+    </div>
+    </div>
+    <div class="elem">
+      <div class="elem-part1">
+        <h2>Choosing a Reliable Online Pharmacy .</h2>
+        <div class="empty"></div>
+        <div class="dog">
+       <a href="mainstore2.html"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg></a>
+        <h4>Learn More</h4>
         </div>
-        <div class="foot2"></div>
-        <div class="foot3"></div>
+        </div>
+      <div class="elem-part2">
+        <img src="./img/d2.jpg">
       </div>
-    </div>
-    <br /><br />
-    <!--<div class="thirdpage">
+      </div>
+</div>
+<br><br>
+<div class="logos">
+  <img src="./img/l1.png">
+  <img src="./img/l2.png">
+  <img src="./img/l3.png">
+  <img src="./img/l4.png">
+  <img src="./img/l5.png">
+  <img src="./img/l6.png">
+  <img src="./img/l1.png">
+  <img src="./img/l2.png">
+  <img src="./img/l3.png">
+  <img src="./img/l4.png">
+  <img src="./img/l5.png">
+  <img src="./img/l6.png">
+</div>
+<br><br>
+<div class="last">
+<div class="footer">
+<div class="foot1">
+  <h4>About Us</h4>
+  <h4>Blog</h4>
+  <h4>Legal</h4>
+  <h4>FAQ</h4>
+</div>
+<div class="foot2">
+  <h4>Shipping & Returns</h4>
+  <h4>Store Policy</h4>
+  <h4>Payment methods</h4>
+  <h4>Contact</h4>
+</div>
+<div class="foot3"></div>
+</div>
+</div>
+<br><br>
+  <!--<div class="thirdpage">
   <section class="slider-section">
 <div class="wheel">
   <div class="wheel__card">
@@ -268,116 +223,67 @@
   </section>
 </div>-->
 
-    <script>
-      // Initialize Parallax
-      var scene = document.getElementById("scene");
-      var parallax = new Parallax(scene);
+  <script>
+    // Initialize Parallax
+    var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
 
-      // GSAP Animations
-      gsap
-        .timeline()
-        .from(".logo", { duration: 1, opacity: 0, x: -20, ease: "power3.out" })
-        .from(
-          ".menu-links ul li",
-          {
-            duration: 1,
-            opacity: 0,
-            x: -20,
-            ease: "power3.out",
-            stagger: 0.08,
-          },
-          "-=0.8"
-        )
+    // GSAP Animations
+    gsap.timeline()
+      .from(".logo", { duration: 1, opacity: 0, x: -20, ease: "power3.out" })
+      .from(".menu-links ul li", {
+        duration: 1,
+        opacity: 0,
+        x: -20,
+        ease: "power3.out",
+        stagger: 0.08
+      }, "-=0.8")
+  
+  .from(".search", { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" }, "-=0.6")
+  .from(".account", { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" }, "-=0.6")
+  .from(".cart", { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" }, "-=0.6")
+  .from(".title", { duration: 1.2, opacity: 0, y: 20, ease: "expo.out" }, "-=0.4")
+  .from(".tagline", { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" }, "-=0.6")
+  .from(".pages", { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" }, "-=0.6")
+  .from(".more", { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" }, "-=0.6")
+  .from(".desc", { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" }, "-=0.6")
+  .from(".arrows", { duration: 0.8, opacity: 0, ease: "expo.out" }, "-=0.6")
+  .from(".juice", { duration: 1, opacity: 0, y: -800, ease: "expo.out" }, "-=0.6")
+  .from(".leaves .layer", { 
+    duration: 1, 
+    opacity: 0, 
+    y: -800, 
+    ease: "expo.out", 
+    stagger: 0.1,
+    onStart: () => parallax.disable(),
+    onComplete: () => parallax.enable()
+  }, "-=0.6");
 
-        .from(
-          ".search",
-          { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" },
-          "-=0.6"
-        )
-        .from(
-          ".account",
-          { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" },
-          "-=0.6"
-        )
-        .from(
-          ".cart",
-          { duration: 0.6, opacity: 0, x: -20, ease: "power3.out" },
-          "-=0.6"
-        )
-        .from(
-          ".title",
-          { duration: 1.2, opacity: 0, y: 20, ease: "expo.out" },
-          "-=0.4"
-        )
-        .from(
-          ".tagline",
-          { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" },
-          "-=0.6"
-        )
-        .from(
-          ".pages",
-          { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" },
-          "-=0.6"
-        )
-        .from(
-          ".more",
-          { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" },
-          "-=0.6"
-        )
-        .from(
-          ".desc",
-          { duration: 0.8, opacity: 0, y: 20, ease: "expo.out" },
-          "-=0.6"
-        )
-        .from(
-          ".arrows",
-          { duration: 0.8, opacity: 0, ease: "expo.out" },
-          "-=0.6"
-        )
-        .from(
-          ".juice",
-          { duration: 1, opacity: 0, y: -800, ease: "expo.out" },
-          "-=0.6"
-        )
-        .from(
-          ".leaves .layer",
-          {
-            duration: 1,
-            opacity: 0,
-            y: -800,
-            ease: "expo.out",
-            stagger: 0.1,
-            onStart: () => parallax.disable(),
-            onComplete: () => parallax.enable(),
-          },
-          "-=0.6"
-        );
-
-      gsap.to(".logos", {
-        xPercent: -50, // Move the entire container to the left
-        repeat: -1, // Infinite loop
-        ease: "linear", // Linear easing for constant speed
-        duration: 10, // Adjust duration for speed of scrolling
-      });
-      gsap.from(".secpage img", {
-        opacity: 0,
-        y: 1000,
-        duration: 1,
-      });
-      gsap.from(".secpage h1", {
-        opacity: 0,
-        x: -1000,
-        duration: 1,
-        stagger: 0.1,
-      });
-      gsap.from(".secpage p", {
-        opacity: 0,
-        y: 1000,
-        duration: 1,
-        stagger: 0.1,
-      });
-      // Register ScrollTrigger plugin
-      /*gsap.registerPlugin(ScrollTrigger);
+gsap.to(".logos", {
+  xPercent: -50, // Move the entire container to the left
+  repeat: -1, // Infinite loop
+  ease: "linear", // Linear easing for constant speed
+  duration: 10, // Adjust duration for speed of scrolling
+});
+gsap.from(".secpage img",{
+  opacity:0,
+  y:1000,
+  duration:1,
+})
+gsap.from(".secpage h1",{
+  opacity:0,
+  x:-1000,
+  duration:1,
+  stagger:0.1,
+})
+gsap.from(".secpage p",{
+  opacity:0,
+  y:1000,
+  duration:1,
+  stagger:0.1,
+})
+// Register ScrollTrigger plugin
+/*gsap.registerPlugin(ScrollTrigger);
 
 let wheel = document.querySelector(".wheel");
 let images = gsap.utils.toArray(".wheel__card");
@@ -446,6 +352,10 @@ images.forEach(image => {
     });
   });
 });*/
-    </script>
-  </body>
-</html>
+
+
+  </script>
+  
+</body>
+
+</html> 
